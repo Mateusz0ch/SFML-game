@@ -9,7 +9,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(SFML 2.5 COMPONENTS graphics window system REQUIRED)
 
 # Add executable
-add_executable(sfml-game main.cpp)
+add_executable(sfml-game main.cpp src/Game.cpp)
 
+target_include_directories(sfml-game PRIVATE
+    inc/)
 # Link SFML libraries
 target_link_libraries(sfml-game sfml-graphics sfml-window sfml-system)
